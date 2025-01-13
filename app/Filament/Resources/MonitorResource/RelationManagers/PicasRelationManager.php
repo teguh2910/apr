@@ -24,7 +24,7 @@ class PicasRelationManager extends RelationManager
                 Forms\Components\TextInput::make('action')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Datepicker::make('due_date')
+            Forms\Components\DatePicker::make('due_date')
                     ->required(),
                 Forms\Components\TextInput::make('pic')
                     ->required(),
