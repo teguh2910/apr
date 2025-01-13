@@ -2,14 +2,14 @@
 
 namespace App\Filament\Imports;
 
-use App\Models\Monitor;
+use App\Models\monitor;
 use Filament\Actions\Imports\ImportColumn;
 use Filament\Actions\Imports\Importer;
 use Filament\Actions\Imports\Models\Import;
 
 class MonitorImporter extends Importer
 {
-    protected static ?string $model = Monitor::class;
+    protected static ?string $model = monitor::class;
 
     public static function getColumns(): array
     {
@@ -34,14 +34,14 @@ class MonitorImporter extends Importer
         ];
     }
 
-    public function resolveRecord(): ?Monitor
+    public function resolveRecord(): ?monitor
     {
         // return Monitor::firstOrNew([
         //     // Update existing records, matching them by `$this->data['column_name']`
         //     'email' => $this->data['email'],
         // ]);
 
-        return new Monitor();
+        return new monitor();
     }
 
     public static function getCompletedNotificationBody(Import $import): string
