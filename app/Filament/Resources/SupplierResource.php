@@ -39,10 +39,12 @@ class SupplierResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-            Tables\Columns\TextColumn::make('name')                    
-                    ->searchable()
-                    ->sortable(),
+            ->columns([Tables\Columns\TextColumn::make('id')
+                ->searchable()
+                ->sortable(),
+            Tables\Columns\TextColumn::make('name')
+            ->searchable()
+            ->sortable(),
             Tables\Columns\TextColumn::make('period')
                     ->searchable()
                     ->sortable(),
