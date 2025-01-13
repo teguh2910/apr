@@ -14,7 +14,7 @@ class MonitorImporter extends Importer
     public static function getColumns(): array
     {
         return [
-            ImportColumn::make('supplier')
+            ImportColumn::make('supplier_id')
                 ->requiredMapping()
                 ->relationship()
                 ->rules(['required']),
@@ -26,6 +26,9 @@ class MonitorImporter extends Importer
                 ->numeric()
                 ->rules(['required', 'integer']),
             ImportColumn::make('status')
+                ->requiredMapping()
+                ->rules(['required', 'max:255']),
+            ImportColumn::make('coy')
                 ->requiredMapping()
                 ->rules(['required', 'max:255']),
         ];
