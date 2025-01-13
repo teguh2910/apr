@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\MonitorResource\Pages;
 use App\Filament\Resources\MonitorResource\RelationManagers;
-use App\Models\Monitor;
+use App\Models\monitor;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MonitorResource extends Resource
 {
-    protected static ?string $model = Monitor::class;
+    protected static ?string $model = monitor::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
