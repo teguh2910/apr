@@ -5,7 +5,7 @@ namespace App\Filament\Pages;
 use Filament\Forms\Components\Select;
 use Filament\Pages\Dashboard\Actions\FilterAction;
 use Filament\Pages\Dashboard\Concerns\HasFiltersAction;
-use App\Models\Monitor;
+use App\Models\monitor;
 
 
 class Dashboard extends \Filament\Pages\Dashboard
@@ -19,10 +19,10 @@ class Dashboard extends \Filament\Pages\Dashboard
             FilterAction::make()
                 ->form([
                     Select::make('year')
-                    ->options(Monitor::all()->pluck('year', 'year'))
+                ->options(monitor::all()->pluck('year', 'year'))
                     ->searchable(),
                     Select::make('coy')
-                    ->options(Monitor::all()->pluck('coy', 'coy'))
+                ->options(monitor::all()->pluck('coy', 'coy'))
                     ->searchable()                    
                 ]),
         ];
