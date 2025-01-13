@@ -66,12 +66,12 @@ class MonitorResource extends Resource
                     ->label('Company')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('supplier.name')                    
+                Tables\Columns\TextColumn::make('supplier.name')
                     ->label('Supplier')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('apr_period')
-                    ->searchable()                    
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('year')
                     ->searchable()
@@ -81,7 +81,7 @@ class MonitorResource extends Resource
                     ->sortable(),
             ])
             ->filters([
-                
+
                 Tables\Filters\SelectFilter::make('apr_period')
                     ->options([
                         'Q1' => 'Q1',
@@ -119,7 +119,7 @@ class MonitorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\PicasRelationManager::class,
         ];
     }
 
