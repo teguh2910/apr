@@ -14,6 +14,6 @@ class monitor extends Model
     }
     public function picas(): HasMany
     {
-        return $this->hasMany(pica::class);
+        return $this->hasMany(Pica::class);
     }
 }
