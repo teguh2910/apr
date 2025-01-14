@@ -55,6 +55,10 @@ class MonitorResource extends Resource
                         'Problem' => 'Problem',
                     ])
                     ->required(),
+                    Forms\Components\FileUpload::make('file')
+                    ->openable()
+                    ->label('Document (Quotation, etc.)')
+                    ->multiple(),
             ]);
     }
 
@@ -107,7 +111,9 @@ class MonitorResource extends Resource
                     ->multiple(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -128,6 +134,7 @@ class MonitorResource extends Resource
         return [
             'index' => Pages\ListMonitors::route('/'),
             'create' => Pages\CreateMonitor::route('/create'),
+            'view' => Pages\ViewMonitor::route('/{record}'),
             'edit' => Pages\EditMonitor::route('/{record}/edit'),
         ];
     }

@@ -16,4 +16,7 @@ class monitor extends Model
     {
         return $this->hasMany(Pica::class);
     }
+    protected $casts = [
+        'file' => 'array',
+    ];
 }
